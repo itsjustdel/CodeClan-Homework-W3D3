@@ -1,0 +1,26 @@
+<html>
+    <head>        
+        <title>
+        {{ title }} - Orders
+        </title>
+        <link rel="stylesheet" href="https://csstools.github.io/normalize.css/11.0.0/normalize.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        
+        <h1>MR PEPPER'S ROCKIN' ORDERS LIST</h1>   
+        <section class="order-list">
+        <ul>
+            {% for order in orders %}
+                <li>
+                    <h3>
+                        <!-- create url with flask function "url_for" with ninja2's loop counter as the argument.- loop.index0 to get zero based
+                        This argument corresponds to the "index" parameter in the show_order function in controller.py -->
+                        <a href= "{{ url_for('show_order', index=loop.index0) }}" >{{ order.customer_name }}</a>
+                    </h3>
+                </li>
+            {% endfor %}
+        </ul>
+        </section>
+    </body>
+</html>

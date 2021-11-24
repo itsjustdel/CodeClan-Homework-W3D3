@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+        {{ title }} - Order
+        </title>
+        <link rel="stylesheet" href="https://csstools.github.io/normalize.css/11.0.0/normalize.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>        
+        <h1>ROCKIN' ORDER INFO</h1>        
+        <div class= order-info-card>
+        <section class="order-list">
+            <ul>
+                <li><h3>{{ order.customer_name }}</h3></li>
+                <li>Order Date :  {{ order.order_date }}</li>
+                <li>Product : {{ order.product_name}}</li>                
+                <li>Quantity : {{ order.quantity }}</li>
+                
+            </ul>
+           
+        </section>
+        </div>
+
+        <div class="centered-button">
+            <a href="/orders" class="return-button">Link Button</a>
+        </div>
+
+    </body>
+</html>

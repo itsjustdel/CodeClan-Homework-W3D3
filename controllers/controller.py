@@ -11,5 +11,5 @@ def show_order(index):
     # get order to send to page, we need to cast the passed string to an int to access list
     intIndex = int(index)
     order = orders[intIndex]
-    return render_template("order.html", title="Mr Pepper's Wreck 'Em Ranch", order=order, index=intIndex)
+    return render_template("order.html", title="Mr Pepper's Wreck 'Em Ranch", order=order)
 
